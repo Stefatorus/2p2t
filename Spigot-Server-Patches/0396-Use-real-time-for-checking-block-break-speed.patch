@@ -5,7 +5,7 @@ Subject: [PATCH] Use real-time for checking block break speed
 
 
 diff --git a/src/main/java/net/minecraft/server/PlayerInteractManager.java b/src/main/java/net/minecraft/server/PlayerInteractManager.java
-index 3d86798248d2256f394d1f4f848ed5a2f2f0695c..16ffc47fae57e2db3ccadc463942174ec301644d 100644
+index 3d86798248d2256f394d1f4f848ed5a2f2f0695c..8f3eb917d0ade78e9eba44a6c634ed30c3fdcaf3 100644
 --- a/src/main/java/net/minecraft/server/PlayerInteractManager.java
 +++ b/src/main/java/net/minecraft/server/PlayerInteractManager.java
 @@ -16,6 +16,7 @@ public class PlayerInteractManager {
