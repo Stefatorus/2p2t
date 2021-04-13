@@ -1,0 +1,62 @@
+2021-04-07 11:51:53,384 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-04-07 11:54:30,984 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-04-07 11:54:34,646 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-API\pom.xml.
+2021-04-07 11:54:45,909 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-API/src/main/java
+2021-04-07 11:54:45,929 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-API/src/test/java
+2021-04-07 11:54:55,682 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 24 sec
+2021-04-07 11:54:55,684 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-04-07 11:54:56,368 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-Server\pom.xml.
+2021-04-07 11:54:56,754 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Paper-API: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT with classifier  to /Paper-API/target/classes
+2021-04-07 11:54:56,907 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-API\pom.xml.
+2021-04-07 11:54:57,425 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-API/src/main/java
+2021-04-07 11:54:57,429 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-API/src/test/java
+2021-04-07 11:54:57,583 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-Server/src/main/java
+2021-04-07 11:54:57,583 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Paper-Server/src/main/resources
+2021-04-07 11:54:57,604 [Worker-11: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Paper-Server/src/test/java
+2021-04-07 11:54:58,091 [Worker-11: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2021-04-07 11:55:00,354 [Worker-4: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/C:/Users/stefa/AppData/Local/Temp/RemoteBundleDiscoveryStrategy8744226290711815404.tmp/org.eclipse.m2e.discovery.oss_catalog_1.13.jar_2711578434579635792.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp.xml
+2021-04-07 11:55:00,355 [Worker-4: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp does not contain lifecycle mapping metadata
+2021-04-07 11:55:00,360 [Worker-4: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/C:/Users/stefa/AppData/Local/Temp/RemoteBundleDiscoveryStrategy8744226290711815404.tmp/org.eclipse.m2e.discovery.oss_catalog_1.13.jar_2711578434579635792.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-egit.xml
+2021-04-07 11:55:00,361 [Worker-4: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2021-04-07 11:55:00,367 [Worker-4: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/C:/Users/stefa/AppData/Local/Temp/RemoteBundleDiscoveryStrategy8744226290711815404.tmp/org.eclipse.m2e.discovery.oss_catalog_1.13.jar_2711578434579635792.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive.xml
+2021-04-07 11:55:00,367 [Worker-4: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2021-04-07 11:55:00,394 [Worker-4: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/C:/Users/stefa/AppData/Local/Temp/RemoteBundleDiscoveryStrategy8744226290711815404.tmp/org.eclipse.m2e.discovery.oss_catalog_1.13.jar_2711578434579635792.jar!/lifecycle%2Forg.eclipse.m2e.discovery.extras.m2e-chromatic.xml
+2021-04-07 11:55:00,395 [Worker-4: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.extras.m2e-chromatic does not contain lifecycle mapping metadata
+2021-04-07 11:55:05,120 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 11:55:05,120 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\main\resources
+2021-04-07 11:55:05,123 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 11:55:05,123 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\test\resources
+2021-04-07 11:55:17,499 [Worker-11: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Paper-API: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT with classifier  to /Paper-API/target/classes
+2021-04-07 11:55:17,515 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 11:55:17,518 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2021-04-07 11:55:17,600 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 11:55:17,600 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-Server\src\test\resources
+2021-04-07 12:01:47,223 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 12:01:47,226 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2021-04-07 12:01:47,228 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 12:01:47,229 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-Server\src\test\resources
+2021-04-07 12:05:07,268 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 12:05:07,269 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2021-04-07 12:05:07,271 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 12:05:07,271 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-Server\src\test\resources
+2021-04-07 13:55:24,158 [Worker-17: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-API\pom.xml.
+2021-04-07 13:55:24,653 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:24,653 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\main\resources
+2021-04-07 13:55:24,655 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:24,656 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\test\resources
+2021-04-07 13:55:50,771 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:50,772 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\main\resources
+2021-04-07 13:55:50,774 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:50,775 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-API\src\test\resources
+2021-04-07 13:55:51,188 [Worker-35: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-Server\pom.xml.
+2021-04-07 13:55:51,356 [Worker-35: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Paper-API: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT with classifier  to /Paper-API/target/classes
+2021-04-07 13:55:51,559 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:51,560 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2021-04-07 13:55:51,565 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 13:55:51,565 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-Server\src\test\resources
+2021-04-07 14:04:53,029 [Worker-21: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Paper-API: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT with classifier  to /Paper-API/target/classes
+2021-04-07 14:04:53,041 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 14:04:53,042 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2021-04-07 14:04:53,046 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-07 14:04:53,047 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory W:\GIT\2p2t\Paper-Server\src\test\resources
+2021-04-07 18:19:45,999 [Worker-64: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: xyz.acrylicstyle.paper:2p2t-api:1.12.2-R0.1-SNAPSHOT @ W:\GIT\2p2t\Paper-API\pom.xml.

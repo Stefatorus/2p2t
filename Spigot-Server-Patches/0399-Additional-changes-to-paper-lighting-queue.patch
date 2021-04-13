@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Stefatorus <stefanluciandeleanu@gmail.com>
+Date: Wed, 7 Apr 2021 14:05:32 +0300
+Subject: [PATCH] Additional changes to paper lighting queue
+
+
+diff --git a/src/main/java/net/minecraft/server/PaperLightingQueue.java b/src/main/java/net/minecraft/server/PaperLightingQueue.java
+index 90621dc696c770d22fb12eb370b0bf9f566252b9..2cefeee5db23823de225f7cbf4f22683b740ae69 100644
+--- a/src/main/java/net/minecraft/server/PaperLightingQueue.java
++++ b/src/main/java/net/minecraft/server/PaperLightingQueue.java
+@@ -34,6 +34,15 @@ class PaperLightingQueue {
+     static class LightingQueue extends ArrayDeque<Runnable> {
+         final private Chunk chunk;
+ 
++        @Override
++        public boolean add(Runnable e) {
++        	if (this.size() > 15) {
++        		return false;
++        	}
++        	
++        	return super.add(e);
++        }
++        
+         LightingQueue(Chunk chunk) {
+             super();
+             this.chunk = chunk;

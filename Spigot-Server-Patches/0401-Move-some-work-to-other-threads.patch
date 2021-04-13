@@ -1,0 +1,100 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Stefatorus <stefanluciandeleanu@gmail.com>
+Date: Tue, 13 Apr 2021 10:36:54 +0300
+Subject: [PATCH] Move some work to other threads
+
+
+diff --git a/src/main/java/net/minecraft/server/Chunk.java b/src/main/java/net/minecraft/server/Chunk.java
+index f8951e9b1e7bcd043c46b8f9868654cba8d63c35..890020c9cbf37a8854b4504ce40a370916a1c0b8 100644
+--- a/src/main/java/net/minecraft/server/Chunk.java
++++ b/src/main/java/net/minecraft/server/Chunk.java
+@@ -16,6 +16,9 @@ import java.util.List;
+ import java.util.Map;
+ import java.util.Random;
+ import java.util.concurrent.ConcurrentLinkedQueue;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++
+ import javax.annotation.Nullable;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
+@@ -1090,6 +1093,8 @@ public class Chunk {
+         return false;
+     }
+ 
++    private ExecutorService es = Executors.newFixedThreadPool(4);
++    
+     // CraftBukkit start
+     public void loadNearby(IChunkProvider ichunkprovider, ChunkGenerator chunkgenerator, boolean newChunk) {
+         world.timings.syncChunkLoadPostTimer.startTiming(); // Paper
+@@ -1120,6 +1125,7 @@ public class Chunk {
+         // CraftBukkit end
+         world.timings.syncChunkLoadPostTimer.stopTiming(); // Paper
+         world.timings.syncChunkLoadPopulateNeighbors.startTiming(); // Paper
++        es.execute(() -> {
+         Chunk chunk = MCUtil.getLoadedChunkWithoutMarkingActive(ichunkprovider,this.locX, this.locZ - 1); // Paper
+         Chunk chunk1 = MCUtil.getLoadedChunkWithoutMarkingActive(ichunkprovider,this.locX + 1, this.locZ); // Paper
+         Chunk chunk2 = MCUtil.getLoadedChunkWithoutMarkingActive(ichunkprovider,this.locX, this.locZ + 1); // Paper
+@@ -1144,6 +1150,7 @@ public class Chunk {
+                 chunk4.a(chunkgenerator);
+             }
+         }
++        });
+         world.timings.syncChunkLoadPopulateNeighbors.stopTiming(); // Paper
+ 
+     }
+diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
+index 4f03599a423deb6b8031ca4718804ca06ec66075..efc0dda4940ce6dfc97238d8ea24f529cd210641 100644
+--- a/src/main/java/net/minecraft/server/PlayerConnection.java
++++ b/src/main/java/net/minecraft/server/PlayerConnection.java
+@@ -15,6 +15,8 @@ import org.apache.logging.log4j.Logger;
+ // CraftBukkit start
+ import java.util.HashSet;
+ import java.util.concurrent.ExecutionException;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
+ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+ import org.bukkit.Location;
+ import org.bukkit.craftbukkit.entity.CraftPlayer;
+@@ -1186,7 +1188,9 @@ public class PlayerConnection implements PacketListenerPlayIn, ITickable {
+ 
+     }
+ 
++    ExecutorService es = Executors.newFixedThreadPool(4);
+     public void sendPacket(final Packet<?> packet) {
++    	es.submit(() -> {
+         if (packet instanceof PacketPlayOutChat) {
+             PacketPlayOutChat packetplayoutchat = (PacketPlayOutChat) packet;
+             EntityHuman.EnumChatVisibility entityhuman_enumchatvisibility = this.player.getChatFlags();
+@@ -1204,8 +1208,8 @@ public class PlayerConnection implements PacketListenerPlayIn, ITickable {
+         if (packet == null || this.processedDisconnect) { // Spigot
+             return;
+         } else if (packet instanceof PacketPlayOutSpawnPosition) {
+-            PacketPlayOutSpawnPosition packet6 = (PacketPlayOutSpawnPosition) packet;
+-            this.player.compassTarget = new Location(this.getPlayer().getWorld(), packet6.position.getX(), packet6.position.getY(), packet6.position.getZ());
++            // PacketPlayOutSpawnPosition packet6 = (PacketPlayOutSpawnPosition) packet;
++            // this.player.compassTarget = new Location(this.getPlayer().getWorld(), packet6.position.getX(), packet6.position.getY(), packet6.position.getZ());
+         }
+         // CraftBukkit end
+ 
+@@ -1226,6 +1230,7 @@ public class PlayerConnection implements PacketListenerPlayIn, ITickable {
+             });
+             throw new ReportedException(crashreport);
+         }
++    	});
+     }
+ 
+     public void a(PacketPlayInHeldItemSlot packetplayinhelditemslot) {
+diff --git a/src/main/java/org/bukkit/craftbukkit/chunkio/ChunkIOExecutor.java b/src/main/java/org/bukkit/craftbukkit/chunkio/ChunkIOExecutor.java
+index f50d55c8eeec400cf762e46051bb27ae29302bc6..b138b76d1e3768ebcc9dadd53c4d905b6d659bd3 100644
+--- a/src/main/java/org/bukkit/craftbukkit/chunkio/ChunkIOExecutor.java
++++ b/src/main/java/org/bukkit/craftbukkit/chunkio/ChunkIOExecutor.java
+@@ -10,7 +10,7 @@ import org.bukkit.craftbukkit.util.AsynchronousExecutor;
+ 
+ public class ChunkIOExecutor {
+     static final int BASE_THREADS = PaperConfig.minChunkLoadThreads; // Paper
+-    static final int PLAYERS_PER_THREAD = 50;
++    static final int PLAYERS_PER_THREAD = 25;
+ 
+     private static final AsynchronousExecutor<QueuedChunk, Chunk, Runnable, RuntimeException> instance = new AsynchronousExecutor<QueuedChunk, Chunk, Runnable, RuntimeException>(new ChunkIOProvider(), BASE_THREADS);
+ 
